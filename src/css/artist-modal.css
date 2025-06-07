@@ -1,0 +1,78 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(156, 156, 156, 0.25);
+  padding: 64px 16px;
+  overflow-y: scroll;
+}
+
+.modal {
+  position: relative;
+  background-color: #060307;
+  border-radius: 16px;
+  padding: 52px 8px;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+.modal-close-icon {
+  fill: #fff;
+}
+
+.modal-title {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.modal-img {
+  border-radius: 16px;
+  width: 272px;
+  height: 167px;
+  background-color: #646464;
+  margin-bottom: 32px;
+}
+
+.artist-desc-item {
+  margin-bottom: 16px;
+}
+
+.artist-desc-title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.artist-desc-text {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.artist-biography {
+  margin-bottom: 16px;
+}
+
+.artist-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.artist-genres-item {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+}
