@@ -108,7 +108,7 @@
 .tracks-heading {
   display: grid;
   grid-template-columns: 1fr 40px 24px;
-  gap: 40px;
+  gap: 30px;
   border-radius: 8px;
   padding: 4px 12px;
   background-color: rgba(255, 255, 255, 0.05);
@@ -127,7 +127,7 @@
 .tracks-item {
   display: grid;
   grid-template-columns: 1fr 40px 24px;
-  gap: 40px;
+  gap: 30px;
   align-items: center;
   border-radius: 8px;
   padding: 8px 12px;
