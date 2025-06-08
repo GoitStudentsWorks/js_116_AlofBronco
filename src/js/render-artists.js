@@ -1,0 +1,29 @@
+export const loadMore = document.querySelector('.load-more-btn');
+function artistTemplate({ genres, strArtist, strBiographyEN, strArtistThumb }) {
+  return `<li class="artists-item">
+        <img class="artists-img" src="${strArtistThumb}" alt="${strArtist}" width="288"/>
+        <ul class="artists-genres">${genres
+          .map(genre => `<li class="artists-genres-item">${genre}</li>`)
+          .join('\n')}</ul>
+        <h4 class="artsits-name">${strArtist}</h4>
+        <p class="artists-descr">${strBiographyEN.split('. ')[0] + '.'}</p>
+        <button class="learn-btn" type="button">Learn More</button>
+      </li>`;
+}
+export function artistsTemplate(artistsList) {
+  return artistsList.map(artistTemplate).join('\n');
+}
+export function showLoadMore() {
+  loadMore.classList.remove('hidden');
+}
+export function hideLoadMore() {
+  loadMore.classList.add('hidden');
+}
+export function updateBtnStatus(currentPage, maxPage) {
+  if (currentPage < maxPage) {
+    showLoadMore();
+    return;
+  } else {
+    hideLoadMore();
+  }
+}
