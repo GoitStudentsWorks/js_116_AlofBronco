@@ -2,7 +2,6 @@
   box-sizing: border-box;
 }
 .hero {
-  padding: 0 20px;
   margin: 0 auto;
   background-color: #23132b;
   height: auto;
@@ -25,9 +24,6 @@
     line-height: 1.1;
     letter-spacing: -0.01em;
     color: #fff;
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
   }
   .discover {
     font-weight: 400;
@@ -39,9 +35,6 @@
     line-height: 1.5;
     color: #fff;
     margin-bottom: 24px;
-    box-sizing: border-box;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
   }
   .explore-btn {
     display: flex;
@@ -52,7 +45,7 @@
     border: none;
     border-radius: 12px;
     padding: 10px 24px;
-    width: 280px;
+    width: 100%;
     height: auto;
     box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
       inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(6, 3, 7, 0.15),
@@ -191,7 +184,7 @@
     line-height: 1.5;
   }
   .bg-image-wrapper::after {
-    content: ''; /* обов’язково */
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
@@ -211,7 +204,11 @@
 }
 
 /*---------DESKTOP---------*/
-@media only screen and (min-width: 321px) and (max-width: 1440px) {
+@media only screen and (min-width: 767px) and (max-width: 1440px) {
+  .hero {
+    display: flex;
+    flex-direction: row;
+  }
   .bg-image {
     background-image: url('../img/hero/bg-image-desktop.webp');
   }
