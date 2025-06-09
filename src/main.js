@@ -1,2 +1,2 @@
-import './js/artist-modal';
-import './js/artists';
+import '/js/artist-modal';
+import '/js/artists/artists';

@@ -1,13 +1,25 @@
 export const loadMore = document.querySelector('.load-more-btn');
-function artistTemplate({ genres, strArtist, strBiographyEN, strArtistThumb }) {
+function artistTemplate({
+  _id,
+  genres,
+  strArtist,
+  strBiographyEN,
+  strArtistThumb,
+}) {
   return `<li class="artists-item">
         <img class="artists-img" src="${strArtistThumb}" alt="${strArtist}" width="288"/>
         <ul class="artists-genres">${genres
-          .map(genre => `<li class="artists-genres-item">${genre}</li>`)
+          .map(
+            genre =>
+              `<li class="artists-genres-item"><p class="artists-genres-text">${genre}</p></li>`
+          )
           .join('\n')}</ul>
-        <h4 class="artsits-name">${strArtist}</h4>
-        <p class="artists-descr">${strBiographyEN.split('. ')[0] + '.'}</p>
-        <button class="learn-btn" type="button">Learn More</button>
+          
+        <h3 class="artsits-name">${strArtist}</h3>
+        <p class="artists-descr">${strBiographyEN}</p>
+        <button class="learn-btn" type="button" id="${_id}">Learn More<svg class="learn-more-svg" width="24" height="24">
+        <use href="/img/sprite.svg#icon-triangle-right"></use>
+      </svg></button>
       </li>`;
 }
 export function artistsTemplate(artistsList) {
