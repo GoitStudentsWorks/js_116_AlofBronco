@@ -1,13 +1,19 @@
 export const loadMore = document.querySelector('.load-more-btn');
-function artistTemplate({ genres, strArtist, strBiographyEN, strArtistThumb }) {
+function artistTemplate({
+  _id,
+  genres,
+  strArtist,
+  strBiographyEN,
+  strArtistThumb,
+}) {
   return `<li class="artists-item">
         <img class="artists-img" src="${strArtistThumb}" alt="${strArtist}" width="288"/>
         <ul class="artists-genres">${genres
           .map(genre => `<li class="artists-genres-item">${genre}</li>`)
           .join('\n')}</ul>
         <h4 class="artsits-name">${strArtist}</h4>
-        <p class="artists-descr">${strBiographyEN.split('. ')[0] + '.'}</p>
-        <button class="learn-btn" type="button">Learn More</button>
+        <p class="artists-descr">${strBiographyEN.slice(0, 62) + '...'}</p>
+        <button class="learn-btn" type="button" data-artist-id="${_id}">Learn More</button>
       </li>`;
 }
 export function artistsTemplate(artistsList) {
