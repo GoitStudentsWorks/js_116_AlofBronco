@@ -68,6 +68,7 @@
   width: 100%;
   background-color: #646464;
   margin-bottom: 32px;
+  object-fit: cover;
 }
 
 .artist-desc-item {
@@ -205,10 +206,8 @@
   fill: inherit;
 }
 
-@media screen and (max-width: 767px) {
-  .modal {
-    max-width: 375px;
-  }
+.modal {
+  max-width: 375px;
 }
 
 @media screen and (min-width: 768px) {
@@ -235,8 +234,7 @@
   }
 
   .modal-img {
-    width: 654px;
-    height: 402px;
+    max-height: 500px;
   }
 
   .artist-description {
@@ -261,6 +259,10 @@
 
   .artist-desc-item {
     margin: 0;
+  }
+
+  .modal {
+    max-width: 768px;
   }
 }
 
@@ -303,5 +305,14 @@
 
   .albums-item {
     width: calc((100% - 32px * 3) / 4);
+  }
+
+  .modal {
+    max-width: 1440px;
+  }
+
+  .artist-desc-text {
+    max-height: 235px;
+    overflow-y: scroll;
   }
 }
