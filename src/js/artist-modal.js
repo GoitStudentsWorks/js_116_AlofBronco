@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+const descContainer = document.querySelector('.description-wrapper');
+const modalTitle = document.querySelector('.modal-title');
+const albumsList = document.querySelector('.albums-list');
+
 async function getArtistData(id) {
   const res = await axios.get(
     `https://sound-wave.b.goit.study/api/artists/${id}`
@@ -8,6 +12,17 @@ async function getArtistData(id) {
   console.log(res.data);
 
   return res.data;
+}
+
+async function loadArtist(artistId) {
+  try {
+    const data = await getArtistData(artistId);
+
+    insertAlbums(data);
+    renderArtistDescription(data);
+  } catch (error) {
+    console.error('Error loading artist data:', error);
+  }
 }
 
 function formatDuration(ms) {
@@ -28,7 +43,7 @@ function trackTemplate({ strTrack, intDuration, movie }) {
                     ? `<a class="track-link" href='${movie}' target="_blank" rel="noopener noreferrer"
                   ><svg class="track-link-icon" width="24" height="24">
                     <use
-                      href="/img/artist-modal/close-modal.svg#icon-youtube"
+                      href="/img/artist-modal/artist-modal.svg#icon-youtube"
                     ></use></svg
                 ></a>`
                     : ''
@@ -83,105 +98,76 @@ function albumsTemplate(groupedAlbums) {
     .join('');
 }
 
-async function insertAlbums(artistId) {
-  try {
-    const data = await getArtistData(artistId);
-    const groupedAlbums = groupTracksByAlbums(data);
-    const albumsList = document.querySelector('.albums-list');
+function insertAlbums(data) {
+  const groupedAlbums = groupTracksByAlbums(data);
 
-    if (albumsList) {
-      albumsList.insertAdjacentHTML('beforeend', albumsTemplate(groupedAlbums));
-    }
-  } catch (error) {
-    console.error('Error loading artist data:', error);
+  if (albumsList) {
+    albumsList.innerHTML = '';
+    albumsList.insertAdjacentHTML('beforeend', albumsTemplate(groupedAlbums));
   }
 }
 
-insertAlbums('65ada227af9f6d155db46908');
+function artistInfoItem(title, value) {
+  return `
+    <li class="artist-desc-item">
+      <h4 class="artist-desc-title">${title}</h4>
+      <p class="artist-desc-text">${value}</p>
+    </li>
+  `;
+}
 
-async function artistDescription(artistId) {
-  try {
-    const data = await getArtistData(artistId);
+function genreItem(genre) {
+  return `
+    <li class="artist-genres-item">
+      <p class="artist-genres-text">${genre}</p>
+    </li>
+  `;
+}
 
-    const {
-      intDiedYear,
-      intFormedYear,
-      intMembers,
-      strArtist,
-      strArtistThumb,
-      strBiographyEN,
-      strCountry,
-      strGender,
-    } = data;
+function artistDescription(data) {
+  const {
+    intDiedYear,
+    intFormedYear,
+    intMembers,
+    strArtist,
+    strArtistThumb,
+    strBiographyEN,
+    strCountry,
+    strGender,
+  } = data;
 
-    document.querySelector('.modal-title').textContent = strArtist;
+  if (modalTitle) modalTitle.textContent = strArtist;
 
-    return `
-    <img
-     class="modal-img"
-     src="${strArtistThumb}"
-     alt="${strArtist}"
-   />
-   <div class="description-text-wrapper">
-     <ul class="artist-description">
-       <li class="artist-desc-item">
-         <h4 class="artist-desc-title">Years active</h4>
-         <p class="artist-desc-text">${intFormedYear} - ${
-      intDiedYear ? intDiedYear : 'present'
-    }</p>
-       </li>
-       <li class="artist-desc-item">
-         <h4 class="artist-desc-title">Sex</h4>
-         <p class="artist-desc-text">${strGender}</p>
-       </li>
-       <li class="artist-desc-item">
-         <h4 class="artist-desc-title">Members</h4>
-         <p class="artist-desc-text">${intMembers}</p>
-       </li>
-       <li class="artist-desc-item">
-         <h4 class="artist-desc-title">Country</h4>
-         <p class="artist-desc-text">${strCountry}</p>
-       </li>
-     </ul>
-     <div class="artist-biography">
-       <h4 class="artist-desc-title">Biography</h4>
-       <p class="artist-desc-text">
-         ${strBiographyEN}
-       </p>
-     </div>
+  const genres = ['Alternative', 'Pop', 'Rock', 'Indie'];
 
-     <ul class="artist-genres">
-       <li class="artist-genres-item">
-         <p class="artist-genres-text">Alternative</p>
-       </li>
-       <li class="artist-genres-item">
-         <p class="artist-genres-text">Pop</p>
-       </li>
-       <li class="artist-genres-item">
-         <p class="artist-genres-text">Rock</p>
-       </li>
-       <li class="artist-genres-item">
-         <p class="artist-genres-text">Indie</p>
-       </li>
-     </ul>
-   </div>
-`;
-  } catch (error) {
-    console.error('Error loading artist data:', error);
-    return '<p class="error-text">Failed to load artist info.</p>';
+  return `
+      <img class="modal-img" src="${strArtistThumb}" alt="${strArtist}" />
+      <div class="description-text-wrapper">
+        <ul class="artist-description">
+          ${artistInfoItem(
+            'Years active',
+            `${intFormedYear} - ${intDiedYear || 'present'}`
+          )}
+          ${artistInfoItem('Sex', strGender)}
+          ${artistInfoItem('Members', intMembers)}
+          ${artistInfoItem('Country', strCountry)}
+        </ul>
+        <div class="artist-biography">
+          <h4 class="artist-desc-title">Biography</h4>
+          <p class="artist-desc-text">${strBiographyEN}</p>
+        </div>
+        <ul class="artist-genres">
+          ${genres.map(genreItem).join('')}
+        </ul>
+      </div>
+    `;
+}
+
+function renderArtistDescription(data) {
+  if (descContainer) {
+    descContainer.innerHTML = '';
+    descContainer.insertAdjacentHTML('beforeend', artistDescription(data));
   }
 }
-const artistDescriptionH = document.querySelector('.description-wrapper');
-async function renderArtistDescription() {
-  const html = await artistDescription('65ada227af9f6d155db46908');
-  artistDescriptionH.insertAdjacentHTML('beforeend', html);
-}
 
-renderArtistDescription();
-
-async function getArtistGenres(id = '65ada227af9f6d155db46908') {
-  const res = await axios.get(`https://sound-wave.b.goit.study/api/genres/`);
-  console.log(res.data);
-}
-
-getArtistGenres();
+loadArtist('65ada227af9f6d155db46908');
