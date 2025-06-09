@@ -23,6 +23,7 @@
 @media screen and (min-width: 1440px) {
   .artists-header {
     font-size: 60px;
+    width: 640px;
   }
 }
 .artists-gallery {
@@ -98,7 +99,7 @@
   height: 58px;
 
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
