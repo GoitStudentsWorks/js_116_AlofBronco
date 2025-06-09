@@ -145,3 +145,8 @@
   height: 24px;
   fill: #fff;
 }
+@media screen and (min-width: 1440px) {
+  .load-more-btn {
+    width: 173px;
+  }
+}
