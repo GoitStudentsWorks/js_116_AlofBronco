@@ -3,18 +3,26 @@ import axios from 'axios';
 const descContainer = document.querySelector('.description-wrapper');
 const modalTitle = document.querySelector('.modal-title');
 const albumsList = document.querySelector('.albums-list');
+const loader = document.querySelector('.loader');
+
+function showLoader() {
+  loader.classList.remove('visually-hidden');
+}
+
+function hideLoader() {
+  loader.classList.add('visually-hidden');
+}
 
 async function getArtistData(id) {
   const res = await axios.get(
     `https://sound-wave.b.goit.study/api/artists/${id}`
   );
 
-  console.log(res.data);
-
   return res.data;
 }
 
 async function loadArtist(artistId) {
+  showLoader();
   try {
     const data = await getArtistData(artistId);
 
@@ -22,6 +30,8 @@ async function loadArtist(artistId) {
     renderArtistDescription(data);
   } catch (error) {
     console.error('Error loading artist data:', error);
+  } finally {
+    hideLoader();
   }
 }
 
