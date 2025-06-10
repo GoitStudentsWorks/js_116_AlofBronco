@@ -1,11 +1,5 @@
 import { getArtistsList } from './sound-wave-api';
-import {
-  artistsTemplate,
-  showLoadMore,
-  hideLoadMore,
-  updateBtnStatus,
-  loadMore,
-} from './render-artists';
+import { artistsTemplate, updateBtnStatus, loadMore } from './render-artists';
 loadMore.addEventListener('click', handleLoadMoreBtn);
 let currentPage = 1;
 let maxPage = 1;

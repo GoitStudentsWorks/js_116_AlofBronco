@@ -12,8 +12,6 @@ export function getArtistsList(page = 1) {
   return axios
     .get(`${BASE_URL}${END_POINT}`, { params })
     .then(res => {
-      console.log(res.data);
-
       return res.data;
     })
     .catch(error => {
