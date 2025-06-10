@@ -1,1 +1,28 @@
 feedback
+<link rel="stylesheet" href="./css/styles.css" />
+<div class="feedback-container">
+    <div class="feedback-section">
+        <div class="swiper-container">
+            <div class="swiper-wrapper" id="feedback-wrapper">
+                <div class="swiper-slide loading-slide">
+                    <div class="loader-wrapper">
+                        <span class="loader"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-buttons">
+            <button id="prevBtn" aria-label="Попередній відгук"><img src="../assets/left-arrow.svg"
+                    alt="Попередній відгук" width="13,41" height="13,41"></button>
+            <button id="nextBtn" aria-label="Наступний відгук"><img src="../assets/right-arrow.svg"
+                    alt="Наступний відгук" width="13,41" height="13,41"></button>
+        </div>
+        <div class="pagination" id="pagination">
+        </div>
+    </div>
+</div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
+ 
+<script type="module" src="./main.js"></script>
