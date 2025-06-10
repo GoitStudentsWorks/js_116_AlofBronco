@@ -1,5 +1,5 @@
 export function setupExploreScroll() {
-  const exploreBtn = document.querySelector('.explore-btn');
+  const exploreBtn = document.querySelector('#btn');
 
   if (exploreBtn) {
     exploreBtn.addEventListener('click', () => {
