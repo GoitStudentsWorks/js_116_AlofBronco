@@ -32,6 +32,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+
+    if (menuBackdrop.classList.contains('is-open')) {
+      menuBackdrop.classList.remove('is-open');
+      iconUse.setAttribute(
+        'href',
+        '/img/header/icons-header.svg#icon-header-open-menu'
+      );
+    }
   });
 });
 

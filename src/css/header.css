@@ -1,7 +1,6 @@
 .header {
   position: fixed;
   top: 0;
-  /* left: 0; */
   width: 100%;
   z-index: 1000;
 }
@@ -10,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6.5px 16px;
+  padding: 12px 20px;
   height: 64px;
 }
 
@@ -32,7 +31,9 @@
 }
 
 .header-menu-nav-item {
+  font-weight: 500;
   font-size: 26px;
+  line-height: 150%;
 }
 
 @media only screen and (max-width: 767px) {
@@ -52,7 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10.5px 64px;
+    padding: 10px 64px;
     height: 72px;
   }
 
@@ -69,7 +70,9 @@
   }
 
   .header-list-item {
+    font-weight: 400;
     font-size: 18px;
+    line-height: 150%;
   }
 }
 
