@@ -1,1 +1,50 @@
-header
+<header class="header">
+  <div class="container header-container">
+    <a href="./index.html" class="header-logo-link js-header-logo-link">
+      <svg class="js-logo-icon" width="119" height="51">
+        <use href="/img/header/icons-header.svg#icon-header-logo-mobile"></use>
+      </svg>
+    </a>
+    
+    <nav class="header-nav">
+      <ul class="header-list">
+        <li class="header-list-item">
+          <a href="#artists">Artists</a>
+        </li>
+        <li class="header-list-item">
+          <a href="#about-us">About Us</a>
+        </li>
+        <li class="header-list-item">
+          <a href="#feedback">Reviews</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="burger-btn js-toggle-menu" type="button">
+      <svg class="header-burger" width="24" height="24">
+        <use
+          class="menu-icon"
+          href="/img/header/icons-header.svg#icon-header-open-menu"
+        ></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="backdrop-header js-header-menu-container" id="header-mobile-menu">
+    <div class="container header-mobile-menu-container">
+      <nav class="header-menu-nav">
+        <ul class="header-menu-nav-list">
+          <li class="header-menu-nav-item">
+            <a href="#artists">Artists</a>
+          </li>
+          <li class="header-menu-nav-item">
+            <a href="#about-us">About Us</a>
+          </li>
+          <li class="header-menu-nav-item">
+            <a href="#feedback">Reviews</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
