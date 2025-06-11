@@ -1,10 +1,10 @@
-.section {
+.hero {
   position: relative;
   background-color: #23132b;
   overflow: hidden;
   padding-bottom: 0;
 }
-.section::before {
+.hero::before {
   content: '';
   position: absolute;
   top: 0;
@@ -15,7 +15,7 @@
   pointer-events: none;
   z-index: 1;
 }
-.section::after {
+.hero::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -96,7 +96,7 @@
 
 /*---------TABLET---------*/
 @media only screen and (min-width: 768px) {
-  .section::after {
+  .hero::after {
     height: 137px;
   }
 
@@ -153,7 +153,7 @@
 
 /*---------DESKTOP---------*/
 @media only screen and (min-width: 1440px) {
-  .section {
+  .hero {
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -194,7 +194,7 @@
     background-image: url('../img/hero/bg-image-desktop.webp');
   }
 
-  .section::after {
+  .hero::after {
     height: 137px;
   }
 
