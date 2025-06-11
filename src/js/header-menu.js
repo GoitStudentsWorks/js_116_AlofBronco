@@ -53,21 +53,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-const adjustSectionOffset = () => {
-  const header = document.querySelector('.header');
-  const firstSection = document.querySelector('.section');
-  if (header && firstSection) {
-    const headerHeight = header.offsetHeight;
-    firstSection.style.marginTop = `${headerHeight}px`;
-  }
-};
-
 window.addEventListener('resize', () => {
   updateLogoIcon();
-  adjustSectionOffset();
 });
 
 window.addEventListener('DOMContentLoaded', () => {
   updateLogoIcon();
-  adjustSectionOffset();
 });
