@@ -9,6 +9,8 @@ const backdrop = document.querySelector('.backdrop');
 const modalCloseBtn = document.querySelector('.modal-close-button');
 const albumsTitle = document.querySelector('.albums-title');
 
+let genresList;
+
 function showLoader() {
   loader.classList.remove('visually-hidden');
 }
@@ -35,6 +37,10 @@ async function loadArtist(artistId) {
     const data = await getArtistData(artistId);
 
     albumsTitle.innerHTML = 'Albums';
+
+    modalCloseBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModalBackdrop);
+    document.addEventListener('keydown', closeEscModal);
 
     insertAlbums(data);
     renderArtistDescription(data);
@@ -157,7 +163,7 @@ function artistDescription(data) {
 
   if (modalTitle) modalTitle.textContent = strArtist;
 
-  const genres = ['Alternative', 'Pop', 'Rock', 'Indie'];
+  const genres = genresList;
 
   return `
       <img class="modal-img" src="${strArtistThumb}" alt="${strArtist}" />
@@ -194,10 +200,28 @@ artistsGallery.addEventListener('click', e => {
   backdrop.classList.add('is-open');
   document.body.style.overflowY = 'hidden';
 
+  genresList = e.target.dataset.genres.split(',');
+
   loadArtist(e.target.dataset.id);
 });
 
-modalCloseBtn.addEventListener('click', e => {
+function closeModal() {
   backdrop.classList.remove('is-open');
   document.body.style.overflowY = 'auto';
-});
+
+  modalCloseBtn.removeEventListener('click', closeModal);
+  backdrop.removeEventListener('click', closeModalBackdrop);
+  document.removeEventListener('keydown', closeEscModal);
+}
+
+function closeModalBackdrop(e) {
+  if (e.target === backdrop) {
+    closeModal();
+  }
+}
+
+function closeEscModal(e) {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+}
