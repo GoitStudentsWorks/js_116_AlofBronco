@@ -6,8 +6,8 @@ const logoUse = document.querySelector('.js-logo-icon use');
 const updateLogoIcon = () => {
   const href =
     window.innerWidth >= 768
-      ? '/img/header/icons-header.svg#icon-header-logo'
-      : '/img/header/icons-header.svg#icon-header-logo-mobile';
+      ? '/img/sprite.svg#icon-header-logo'
+      : '/img/sprite.svg#icon-header-logo-mobile';
 
   logoUse.setAttribute('href', href);
 };
@@ -18,9 +18,11 @@ toggleBtn.addEventListener('click', () => {
   iconUse.setAttribute(
     'href',
     isOpen
-      ? '/img/header/icons-header.svg#icon-header-close-menu'
-      : '/img/header/icons-header.svg#icon-header-open-menu'
+      ? '/img/sprite.svg#icon-header-close-menu'
+      : '/img/sprite.svg#icon-header-open-menu'
   );
+
+  document.body.classList.toggle('menu-open', isOpen);
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -30,18 +32,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const targetElement = document.getElementById(targetId);
 
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const header = document.querySelector('.header');
+      const headerHeight = header.offsetHeight;
+
+      const elementPosition =
+        targetElement.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     }
 
     if (menuBackdrop.classList.contains('is-open')) {
       menuBackdrop.classList.remove('is-open');
-      iconUse.setAttribute(
-        'href',
-        '/img/header/icons-header.svg#icon-header-open-menu'
-      );
+      iconUse.setAttribute('href', '/img/sprite.svg#icon-header-open-menu');
+      document.body.classList.remove('menu-open');
     }
   });
 });
 
-window.addEventListener('resize', updateLogoIcon);
-window.addEventListener('DOMContentLoaded', updateLogoIcon);
+const adjustSectionOffset = () => {
+  const header = document.querySelector('.header');
+  const firstSection = document.querySelector('.section');
+  if (header && firstSection) {
+    const headerHeight = header.offsetHeight;
+    firstSection.style.marginTop = `${headerHeight}px`;
+  }
+};
+
+window.addEventListener('resize', () => {
+  updateLogoIcon();
+  adjustSectionOffset();
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  updateLogoIcon();
+  adjustSectionOffset();
+});
