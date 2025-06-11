@@ -16,7 +16,7 @@ function artistTemplate({
           .join('\n')}</ul>
                   <h3 class="artsits-name">${strArtist}</h3>
         <p class="artists-descr">${strBiographyEN}</p>
-        <button class="learn-btn" type="button" id="${_id}">Learn More<svg class="learn-more-svg" width="24" height="24">
+        <button class="learn-btn" type="button" data-id="${_id}" data-genres="${genres}">Learn More<svg class="learn-more-svg" width="24" height="24">
         <use href="/img/sprite.svg#icon-triangle-right"></use>
       </svg></button>
       </li>`;
