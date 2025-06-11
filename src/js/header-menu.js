@@ -1,4 +1,4 @@
-import spriteUrl from '../public/img/sprite.svg?url';
+import spriteUrl from '/img/sprite.svg?url';
 
 const menuBackdrop = document.querySelector('.backdrop-header');
 const toggleBtn = document.querySelector('.js-toggle-menu');

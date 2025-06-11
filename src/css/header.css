@@ -20,13 +20,15 @@
   padding: 0;
 }
 
-.header-logo-link {
+.header-logo {
   fill: #fff;
+}
+
+.header-logo-link:hover {
   transition: opacity 0.2s ease-in-out;
 }
 
-.header-logo-link:hover,
-.header-logo-link:focus {
+.header-logo-link:hover {
   opacity: 0.6;
 }
 
@@ -57,7 +59,7 @@
     display: none;
   }
 
-  .header-logo-link {
+  .header-logo {
     fill: #764191;
   }
 }
