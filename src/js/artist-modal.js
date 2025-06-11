@@ -4,6 +4,10 @@ const descContainer = document.querySelector('.description-wrapper');
 const modalTitle = document.querySelector('.modal-title');
 const albumsList = document.querySelector('.albums-list');
 const loader = document.querySelector('.loader');
+const artistsGallery = document.querySelector('.artists-gallery');
+const backdrop = document.querySelector('.backdrop');
+const modalCloseBtn = document.querySelector('.modal-close-button');
+const albumsTitle = document.querySelector('.albums-title');
 
 function showLoader() {
   loader.classList.remove('visually-hidden');
@@ -22,9 +26,15 @@ async function getArtistData(id) {
 }
 
 async function loadArtist(artistId) {
+  descContainer.innerHTML = '';
+  albumsList.innerHTML = '';
+  modalTitle.innerHTML = '';
+  albumsTitle.innerHTML = '';
   showLoader();
   try {
     const data = await getArtistData(artistId);
+
+    albumsTitle.innerHTML = 'Albums';
 
     insertAlbums(data);
     renderArtistDescription(data);
@@ -112,7 +122,6 @@ function insertAlbums(data) {
   const groupedAlbums = groupTracksByAlbums(data);
 
   if (albumsList) {
-    albumsList.innerHTML = '';
     albumsList.insertAdjacentHTML('beforeend', albumsTemplate(groupedAlbums));
   }
 }
@@ -175,9 +184,20 @@ function artistDescription(data) {
 
 function renderArtistDescription(data) {
   if (descContainer) {
-    descContainer.innerHTML = '';
     descContainer.insertAdjacentHTML('beforeend', artistDescription(data));
   }
 }
 
-loadArtist('65ada227af9f6d155db46908');
+artistsGallery.addEventListener('click', e => {
+  if (e.target.nodeName !== 'BUTTON') return;
+
+  backdrop.classList.add('is-open');
+  document.body.style.overflowY = 'hidden';
+
+  loadArtist(e.target.dataset.id);
+});
+
+modalCloseBtn.addEventListener('click', e => {
+  backdrop.classList.remove('is-open');
+  document.body.style.overflowY = 'auto';
+});
