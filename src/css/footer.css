@@ -1,5 +1,5 @@
 .footer.section {
-  padding-top: 48px;
+  padding: 48px 0;
 }
 
 .footer-wrapper {
@@ -34,9 +34,10 @@
   display: inline-block;
   width: 116px;
   height: 36px;
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
-.footer-nav-logo:hover {
+.footer-nav-logo:hover,
+.footer-nav-logo:focus {
   opacity: 0.6;
 }
 .footer-logo-icon {
@@ -64,9 +65,10 @@
   font-size: 16px;
   line-height: 1.5;
   display: inline-block;
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
-.footer-nav-link:hover {
+.footer-nav-link:hover,
+.footer-nav-link:focus {
   opacity: 0.6;
 }
 .footer-thumb {
@@ -86,6 +88,11 @@
   align-items: center;
   justify-content: center;
 }
+@media screen and (min-width: 768px) {
+  .footer-socials-list {
+    gap: 24px;
+  }
+}
 .footer-socials-item {
   display: inline-flex;
   align-items: center;
@@ -93,9 +100,10 @@
 }
 .footer-socials-link {
   display: inline-block;
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
-.footer-socials-link:hover {
+.footer-socials-link:hover,
+.footer-socials-link:focus {
   opacity: 0.6;
 }
 .footer-social-svg {
