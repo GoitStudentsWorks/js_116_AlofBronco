@@ -1,6 +1,3 @@
-.hidden {
-  display: none;
-}
 .artists-title {
   font-weight: 600;
   font-size: 16px;
@@ -91,8 +88,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
-  height: 58px;
-
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -113,6 +108,11 @@
   color: #fff;
   border: none;
   background-color: inherit;
+  transition: opacity 250ms ease-in-out;
+}
+.learn-btn:hover,
+.learn-btn:focus {
+  opacity: 0.6;
 }
 .load-more-btn {
   box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
@@ -136,6 +136,7 @@
   margin-right: auto;
   margin-left: auto;
 }
+
 .load-more-svg,
 .learn-more-svg {
   display: inline-block;
@@ -146,5 +147,27 @@
 @media screen and (min-width: 1440px) {
   .load-more-btn {
     width: 173px;
+    transition: opacity 250ms ease-in-out;
   }
+  .load-more-btn:hover {
+    opacity: 0.6;
+  }
+}
+.loader-artists {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #646464;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+
+  position: absolute;
+  margin-top: 64px;
+
+  left: 50%;
+  transform: translate(0%, -50%);
+
+  z-index: 9999;
 }
