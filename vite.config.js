@@ -10,6 +10,7 @@ export default defineConfig(({ command }) => {
       [command === 'serve' ? 'global' : '_global']: {},
     },
     root: 'src',
+    base: '/musicians-website/',
     build: {
       sourcemap: true,
       rollupOptions: {
