@@ -23,6 +23,15 @@ body.menu-open {
   fill: #fff;
 }
 
+.header-burger {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.header-burger:hover,
+.header-burger:focus {
+  opacity: 0.6;
+}
+
 .burger-btn {
   border: none;
   background: transparent;

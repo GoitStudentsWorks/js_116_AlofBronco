@@ -76,7 +76,14 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 1.5;
+  transition: background 0.2s ease-in-out;
 }
+
+.explore-btn:hover,
+.explore-btn:focus {
+  background: rgba(118, 65, 145, 0.6);
+}
+
 .bg-image {
   margin: 0 auto;
   background-color: #23132b;
