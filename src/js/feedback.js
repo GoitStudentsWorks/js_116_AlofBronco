@@ -8,6 +8,9 @@ const wrapper = document.getElementById('feedback-wrapper');
 const paginationContainer = document.getElementById('pagination');
 let swiperInstance;
 
+
+// запит на сервер 
+
 async function fetchFeedbacks() {
     try {
         const response = await axios.get('https://sound-wave.b.goit.study/api/feedbacks', {
