@@ -135,6 +135,12 @@
   gap: 12px;
   margin-right: auto;
   margin-left: auto;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.load-more-btn:hover,
+.load-more-btn:focus {
+  background-color: rgba(118, 65, 145, 0.6);
 }
 
 .load-more-svg,
