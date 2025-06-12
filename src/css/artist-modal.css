@@ -210,6 +210,14 @@
   fill: rgba(242, 242, 242, 0.4);
 }
 
+.track-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+}
+
 .track-link-icon {
   display: flex;
   justify-content: center;
