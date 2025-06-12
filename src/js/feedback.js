@@ -20,31 +20,22 @@ async function fetchFeedbacks() {
             }
         });
         let feedbacks = response.data.data;
-            console.log(feedbacks);
-            
-        if (feedbacks && feedbacks.length > 3) {
-            feedbacks = feedbacks.slice(0, 3);
-        }
- 
+            console.log(feedbacks); // srawdzian
+
         if (!feedbacks || feedbacks.length === 0) {
             "No feedback find"
         }
-        
-        while (feedbacks.length < 3) {
-             feedbacks.push({ name: `Користувач ${feedbacks.length + 1}`, descr: 'Наразі немає додаткових відгуків для відображення.', rating: 3 });
-        }
 
-
-        renderFeedbacks(feedbacks);
+        console.log(renderFeedbacks(feedbacks));
         initSwiper();
-        initPaginationControls(); 
+        // initSwiperButtoms(); 
 
     } catch (err) {
-        console.error('Помилка при завантаженні відгуків', err);
-        showErrorMessage();
+        console.error('Feedback loading error', err);
     }
 }
 
+// рендер 
 function renderFeedbacks(feedbacks) {
     wrapper.innerHTML = '';
 
@@ -77,12 +68,13 @@ function generateStarRating(rating) {
 }
 
 
+
+ //  Swiper 
 function initSwiper() {
     if (swiperInstance) {
         swiperInstance.destroy(true, true);
     }
 
-    //  Swiper 
     swiperInstance = new Swiper('.swiper-container', {
         loop: true,
         slidesPerView: 1,
@@ -100,11 +92,23 @@ function initSwiper() {
             init: updatePagination,
         }
     });
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (swiperInstance) {
+            swiperInstance.slidePrev();
+        }
+    });
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (swiperInstance) {
+            swiperInstance.slideNext();
+        }
+    });
 
-    // пагінація
     createPaginationDots(3);
     updatePagination();
 }
+
+
+ //точки і їх функціонал
 
 function createPaginationDots(totalDots) {
     paginationContainer.innerHTML = ''; 
@@ -112,6 +116,7 @@ function createPaginationDots(totalDots) {
     for (let i = 0; i < totalDots; i++) {
         const dot = document.createElement('span');
         dot.id = `pag-${i}`;
+        dot.classList.add('pagination-dot');
         dot.addEventListener('click', () => {
             if (swiperInstance) {
                 swiperInstance.slideToLoop(i);
@@ -122,26 +127,11 @@ function createPaginationDots(totalDots) {
 }
 
 
-function initPaginationControls() {
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        if (swiperInstance) {
-            swiperInstance.slidePrev();
-        }
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        if (swiperInstance) {
-            swiperInstance.slideNext();
-        }
-    });
-}
 
 function updatePagination() {
     if (!swiperInstance || swiperInstance.slides.length === 0) {
         return;
     }
-
-
     const activeIndex = swiperInstance.realIndex;
 
     document.querySelectorAll('.pagination span').forEach((span, index) => {
@@ -152,25 +142,6 @@ function updatePagination() {
     });
 }
 
-function showNoFeedbacksMessage() {
-    wrapper.innerHTML = '<div class="swiper-slide">Наразі відгуків немає</div>';
-    if (swiperInstance) {
-        swiperInstance.destroy(true, true);
-    }
-    paginationContainer.innerHTML = '';
-    document.getElementById('prevBtn').style.display = 'none';
-    document.getElementById('nextBtn').style.display = 'none';
-}
-
-function showErrorMessage() {
-    wrapper.innerHTML = '<div class="swiper-slide error-message">Не вдалося завантажити відгуки. Спробуйте пізніше.</div>';
-    if (swiperInstance) {
-        swiperInstance.destroy(true, true);
-    }
-    paginationContainer.innerHTML = '';
-    document.getElementById('prevBtn').style.display = 'none';
-    document.getElementById('nextBtn').style.display = 'none';
-}
 
 
-document.addEventListener('DOMContentLoaded', fetchFeedbacks);
+document.addEventListener('DOMContentLoaded', fetchFeedbacks); 
