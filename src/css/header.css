@@ -129,3 +129,15 @@ body.menu-open {
   visibility: visible;
   pointer-events: auto;
 }
+
+.menu-icon-close {
+  display: none;
+}
+
+body.menu-open .menu-icon-open {
+  display: none;
+}
+
+body.menu-open .menu-icon-close {
+  display: block;
+}
