@@ -1,18 +1,8 @@
-import spriteUrl from '/img/sprite.svg?url';
-
 const menuBackdrop = document.querySelector('.backdrop-header');
 const toggleBtn = document.querySelector('.js-toggle-menu');
-const iconUse = toggleBtn.querySelector('.menu-icon');
 
 toggleBtn.addEventListener('click', () => {
   const isOpen = menuBackdrop.classList.toggle('is-open');
-
-  iconUse.setAttribute(
-    'href',
-    isOpen
-      ? `${spriteUrl}#icon-header-close-menu`
-      : `${spriteUrl}#icon-header-open-menu`
-  );
   document.body.classList.toggle('menu-open', isOpen);
 });
 
@@ -38,7 +28,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     if (menuBackdrop.classList.contains('is-open')) {
       menuBackdrop.classList.remove('is-open');
-      iconUse.setAttribute('href', `${spriteUrl}#icon-header-open-menu`);
       document.body.classList.remove('menu-open');
     }
   });
