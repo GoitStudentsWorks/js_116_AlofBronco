@@ -32,7 +32,6 @@ body {
     align-items: center;
     position: relative;
     gap: 16px;
-    /* Залишаємо gap для 16px між прямими дітьми (swiper-container, pagination, button) */
 }
 
 .swiper-container {
@@ -41,8 +40,6 @@ body {
     position: relative;
     flex-grow: 1;
     min-height: 180px;
-    /* **ВИПРАВЛЕНО:** Зменшуємо min-height, щоб займати менше місця */
-    /* background-color: rgba(255, 0, 0, 0.1); /* Тимчасово для дебагу, щоб побачити розмір */
 }
 
 .swiper-slide {
@@ -51,7 +48,6 @@ body {
     padding: 0;
     box-shadow: none;
     min-height: auto;
-    /* **ВИПРАВЛЕНО:** Змінюємо на auto, щоб вміст визначав висоту */
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -72,7 +68,7 @@ body {
     max-width: 90%;
 }
 
-/* ІМ'Я АВТОРА */
+/* АВТОР */
 .swiper-slide .user {
     font-family: "IBM Plex Sans", sans-serif;
     font-weight: 600;
@@ -81,13 +77,12 @@ body {
     letter-spacing: 0%;
     margin-top: 0;
     margin-bottom: 0;
-    /* **Змінено:** Обнуляємо, щоб відступ контролював rating */
+
     color: #fff;
 }
 
 .rating {
     margin-bottom: 0;
-    /* **ВИПРАВЛЕНО:** Обнуляємо. Тепер відступ між swiper-container та pagination буде контролюватися gap на feedback-section */
     margin-top: 0;
     display: flex;
     justify-content: center;
@@ -121,7 +116,7 @@ body {
     z-index: 20;
 }
 
-/* ПРИХОВУЄМО КНОПКИ */
+
 .swiper-buttons button {
     display: none;
     background-color: #060307;
@@ -154,9 +149,7 @@ body {
     gap: 8px;
     padding: 0;
     margin-top: 0;
-    /* Відступ буде заданий gap на feedback-section */
     margin-bottom: 0;
-    /* Відступ буде заданий gap на feedback-section */
     display: flex;
     justify-content: center;
 }
@@ -199,7 +192,6 @@ body {
         0px 32px 24px 0px rgba(255, 255, 255, 0.05) inset;
     transition: background 0.3s ease;
     margin-top: 0;
-    /* Відступ буде заданий gap на feedback-section */
     margin-bottom: 0;
 }
 
@@ -260,18 +252,15 @@ body {
 
     .feedback-section {
         gap: 16px;
-        /* Зберігаємо 16px відступу */
         min-height: 300px;
     }
 
     .swiper-container {
         min-height: 200px;
-        /* **ВИПРАВЛЕНО:** Зменшуємо min-height */
     }
 
     .swiper-slide {
         min-height: auto;
-        /* **ВИПРАВЛЕНО:** Змінюємо на auto */
     }
 
     .swiper-slide .text {
@@ -286,12 +275,10 @@ body {
         font-size: 18px;
         margin-top: 0;
         margin-bottom: 0;
-        /* **Змінено:** Обнуляємо */
     }
 
     .rating {
         margin-bottom: 0;
-        /* **ВИПРАВЛЕНО:** Обнуляємо */
         margin-top: 0;
         gap: 4px;
     }
@@ -355,17 +342,14 @@ body {
     .feedback-section {
         min-height: 397.89px;
         gap: 80px;
-        /* Залишаємо gap для десктопу */
     }
 
     .swiper-container {
         min-height: 250px;
-        /* Залишаємо як було */
     }
 
     .swiper-slide {
         min-height: auto;
-        /* **ВИПРАВЛЕНО:** Змінюємо на auto */
     }
 
     .swiper-slide .text {
@@ -381,12 +365,10 @@ body {
         font-size: 18px;
         margin-top: 0;
         margin-bottom: 0;
-        /* **Змінено:** Обнуляємо */
     }
 
     .rating {
         margin-bottom: 0;
-        /* **ВИПРАВЛЕНО:** Обнуляємо */
         gap: 5px;
     }
 
