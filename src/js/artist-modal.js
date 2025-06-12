@@ -69,7 +69,7 @@ function trackTemplate({ strTrack, intDuration, movie }) {
                     ? `<a class="track-link" href='${movie}' target="_blank" rel="noopener noreferrer"
                   ><svg class="track-link-icon" width="24" height="24">
                     <use
-                      href="/img/sprite.svg#icon-youtube"
+                      href="./img/sprite.svg#icon-youtube"
                     ></use></svg
                 ></a>`
                     : ''
