@@ -1,0 +1,61 @@
+.icon {
+  fill: #fff;
+}
+.team-Img {
+  border-radius: 16px;
+}
+.containerArtist {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 48px;
+}
+.contentArtist {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 280px;
+}
+.artistsP {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+}
+.aboutArtist {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+@media only screen and (min-width: 768px) {
+  .contentArtist {
+    max-width: 704px;
+    gap: 24px;
+  }
+  .containerArtist {
+    gap: 24px;
+  }
+  .icon {
+    width: 80px;
+    height: 80px;
+  }
+  .artistsP {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .containerArtist {
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 32px;
+  }
+  .aboutArtist {
+    font-size: 60px;
+  }
+  .contentArtist {
+    max-width: 640px;
+  }
+}
