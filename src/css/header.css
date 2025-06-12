@@ -18,10 +18,16 @@ body.menu-open {
   height: 64px;
 }
 
+.header-burger,
+.menu-icon {
+  fill: #fff;
+}
+
 .burger-btn {
   border: none;
   background: transparent;
   padding: 0;
+  fill: #fff;
 }
 
 .header-logo {
