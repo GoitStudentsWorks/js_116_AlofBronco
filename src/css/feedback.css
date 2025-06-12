@@ -26,7 +26,6 @@
     align-items: center;
     position: relative;
     gap: 16px;
-    /* Залишаємо gap для мобільних */
 }
 
 .swiper-container {
@@ -35,7 +34,6 @@
     position: relative;
     flex-grow: 1;
     min-height: 100px;
-    /* На мобільному gap контролює відстань після swiper-container, тому margin-bottom тут не потрібен */
 }
 
 .swiper-slide {
@@ -99,7 +97,6 @@
 
 .swiper-buttons {
     position: absolute;
-    /* Це повинно виводити їх з потоку */
     top: 48px;
     width: 100%;
     left: 0;
@@ -114,7 +111,6 @@
 
 .swiper-buttons button {
     display: none;
-    /* Приховані на мобільному */
     background-color: #060307;
     color: #fff;
     border-radius: 8px;
@@ -145,9 +141,7 @@
     gap: 8px;
     padding: 0;
     margin-top: 0;
-    /* На мобільному gap контролює це */
     margin-bottom: 0;
-    /* На мобільному gap контролює це */
     display: flex;
     justify-content: center;
 }
@@ -190,9 +184,7 @@
         0px 32px 24px 0px rgba(255, 255, 255, 0.05) inset;
     transition: background 0.3s ease;
     margin-top: 0;
-    /* На мобільному gap контролює це */
     margin-bottom: 0;
-    /* На мобільному gap контролює це */
 }
 
 .leave-feedback-btn:hover {
@@ -252,14 +244,12 @@
 
     .feedback-section {
         gap: 0;
-        /* <--- ЗМІНА: Вимикаємо gap, щоб вручну керувати відступами */
         min-height: 300px;
     }
 
     .swiper-container {
         min-height: 100px;
         margin-bottom: 16px;
-        /* <--- ЗМІНА: Явно задаємо відступ 16px після swiper-container */
     }
 
     .swiper-slide {
@@ -289,12 +279,10 @@
     .swiper-buttons {
         top: 59px;
         padding: 0 44px;
-        /* margin-bottom: 0; - Не потрібен, оскільки position: absolute */
     }
 
     .swiper-buttons button {
         display: flex;
-        /* КНОПКИ ТЕПЕР ВИДИМІ */
         width: 44px;
         height: 44px;
         font-size: 22px;
@@ -309,9 +297,7 @@
         gap: 10px;
         padding: 0;
         margin-top: 0;
-        /* <--- ЗМІНА: Тут не потрібен margin-top, якщо gap вимкнено */
         margin-bottom: 16px;
-        /* <--- ЗМІНА: Явно задаємо відступ 16px після пагінації */
     }
 
     .pagination .pagination-dot {
@@ -348,13 +334,11 @@
 
     .feedback-section {
         gap: 80px;
-        /* Залишаємо gap 80px для десктопів, як ви хотіли */
         min-height: 397.89px;
     }
 
     .swiper-container {
         min-height: 100px;
-        /* На десктопі gap 80px на feedback-section контролює відстань, тому margin-bottom тут не потрібен */
     }
 
     .swiper-slide {
