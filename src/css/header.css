@@ -18,10 +18,20 @@ body.menu-open {
   height: 64px;
 }
 
+.header-burger,
+.menu-icon {
+  fill: #fff;
+}
+
 .burger-btn {
   border: none;
   background: transparent;
   padding: 0;
+  fill: #fff;
+}
+
+.header-logo {
+  fill: #fff;
 }
 
 .header-logo-link {
@@ -29,7 +39,11 @@ body.menu-open {
 }
 
 .header-logo-link:hover,
-.header-logo-link:focus {
+.header-logo-link:focus,
+.header-menu-nav-item:hover,
+.header-menu-nav-item:focus,
+.header-list-item:hover,
+.header-list-item:focus {
   opacity: 0.6;
 }
 
@@ -50,16 +64,14 @@ body.menu-open {
   line-height: 1.5;
   transition: opacity 0.2s ease-in-out;
 }
-.header-menu-nav-item:hover,
-.header-menu-nav-item:focus,
-.header-list-item:hover,
-.header-list-item:focus {
-  opacity: 0.6;
-}
 
 @media only screen and (max-width: 767px) {
   .header-list {
     display: none;
+  }
+
+  .header-logo {
+    fill: #764191;
   }
 }
 
