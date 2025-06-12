@@ -1,9 +1,9 @@
-export function setupExploreScroll() {
+function setupExploreScroll() {
   const exploreBtn = document.querySelector('#btn');
 
   if (exploreBtn) {
     exploreBtn.addEventListener('click', () => {
-      const targetSection = document.querySelector('#explore');
+      const targetSection = document.querySelector('#artists');
       if (targetSection) {
         targetSection.scrollIntoView({
           behavior: 'smooth',
@@ -13,3 +13,7 @@ export function setupExploreScroll() {
     });
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupExploreScroll();
+});

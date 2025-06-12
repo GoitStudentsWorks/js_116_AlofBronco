@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 200px;
+  height: 80px;
   background: linear-gradient(180deg, rgba(6, 3, 7, 1), rgba(35, 19, 43, 0));
   pointer-events: none;
   z-index: 10;
@@ -24,7 +24,7 @@
   height: 106px;
   background: linear-gradient(0deg, rgba(6, 3, 7, 1), rgba(35, 19, 43, 0));
   pointer-events: none;
-  z-index: 1;
+  z-index: 10;
 }
 
 .hero-container {
@@ -41,19 +41,17 @@
   height: auto;
 }
 .hero-header {
-  margin-top: 64px;
+  font-family: 'Epilogue', sans-serif;
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 48px;
   line-height: 1.1;
   letter-spacing: -0.01em;
-  color: #fff;
 }
 .discover {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
-  color: #fff;
   margin-bottom: 24px;
 }
 .explore-btn {
@@ -80,8 +78,9 @@
   line-height: 1.5;
 }
 .bg-image {
+  margin: 0 auto;
   background-color: #23132b;
-  width: 100%;
+  width: 280px;
   height: 385px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -119,7 +118,6 @@
 
   .hero-header {
     font-size: 48px;
-    margin-top: 32px;
     margin-bottom: 24px;
     width: 600px;
   }
@@ -127,7 +125,7 @@
   .discover {
     font-size: 20px;
     margin-bottom: 32px;
-    width: 650px;
+    width: 624px;
   }
 
   .explore-btn {
@@ -181,16 +179,12 @@
     font-size: 84px;
   }
 
-  .discover {
-    width: 638px;
-  }
-
   .explore-btn {
     width: 206px;
   }
 
   .bg-image {
-    height: 900px;
+    height: 960px;
     width: 641px;
     background-image: url('../img/hero/bg-image-desktop.webp');
   }
@@ -198,10 +192,11 @@
   .hero::after {
     height: 137px;
   }
+}
 
-  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .bg-image {
-      background-image: url('../img/hero/bg-image-desktop@2x.webp');
-    }
+@media (min-width: 1440px) and (min-resolution: 192dpi),
+  (min-width: 1440px) and (min-device-pixel-ratio: 2) {
+  .bg-image {
+    background-image: url('../img/hero/bg-image-desktop@2x.webp');
   }
 }
