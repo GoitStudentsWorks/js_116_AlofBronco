@@ -4,6 +4,7 @@
   overflow: hidden;
   padding-bottom: 0;
 }
+
 .hero::before {
   content: '';
   position: absolute;
@@ -15,6 +16,7 @@
   pointer-events: none;
   z-index: 10;
 }
+
 .hero::after {
   content: '';
   position: absolute;
@@ -28,8 +30,7 @@
 }
 
 .hero-container {
-  box-sizing: border-box;
-  position: relative;
+  padding: 0 20px;
 }
 
 .promo {
@@ -39,7 +40,10 @@
   flex-direction: column;
   width: 100%;
   height: auto;
+    margin-bottom: 64px;
+
 }
+
 .hero-header {
   font-family: 'Epilogue', sans-serif;
   margin-bottom: 20px;
@@ -48,12 +52,14 @@
   line-height: 1.1;
   letter-spacing: -0.01em;
 }
+
 .discover {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 24px;
 }
+
 .explore-btn {
   display: flex;
   align-items: center;
@@ -64,7 +70,7 @@
   border-radius: 12px;
   padding: 10px 24px;
   width: 100%;
-  height: auto;
+  height: 47px;
   box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
     inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(6, 3, 7, 0.15),
     inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
@@ -72,10 +78,10 @@
   background: #764191;
   color: #fff;
   text-align: center;
-  margin-bottom: 64px;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.5;
+  padding: 0;
   transition: background 0.2s ease-in-out;
 }
 
@@ -84,11 +90,12 @@
   background: rgba(118, 65, 145, 0.6);
 }
 
+
 .bg-image {
-  margin: 0 auto;
   background-color: #23132b;
   width: 280px;
   height: 385px;
+  margin: auto;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -112,15 +119,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    margin: 0 auto;
-    width: 704px;
-    height: 963px;
+    padding: 0 32px;
   }
 
   .promo {
     width: 100%;
     align-self: center;
+    margin-bottom: 32px;
   }
 
   .hero-header {
@@ -138,8 +143,9 @@
   .explore-btn {
     width: 246px;
     height: 47px;
-    margin-bottom: 32px;
     align-self: flex-start;
+    padding: 0;
+    margin: 0;
   }
 
   .bg-image {
@@ -162,25 +168,18 @@
 /*---------DESKTOP---------*/
 @media only screen and (min-width: 1440px) {
   .hero {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
   }
 
   .hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: row;
-    margin: 0 auto;
-    max-width: 1280px;
-    width: 100%;
+    padding: 0 64px;
   }
 
   .promo {
     justify-content: center;
     flex-direction: column;
-    gap: 0;
-    margin-right: 32px;
+    margin: 0;
     width: 672px;
   }
 
@@ -190,16 +189,15 @@
 
   .explore-btn {
     width: 206px;
+    margin: 0;
   }
 
   .bg-image {
     height: 960px;
     width: 641px;
+    margin: 0;
     background-image: url('/img/hero/bg-image-desktop.webp');
-  }
 
-  .hero::after {
-    height: 137px;
   }
 }
 
