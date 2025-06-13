@@ -1,24 +1,26 @@
-<div class="feedback-container container" id="feedback">
-  <div class="feedback-section">
-    <div class="swiper-container">
-      <div class="swiper-wrapper" id="feedback-wrapper">
-        <div class="loader-wrapper">
-          <span class="loader"></span>
+<section class="section">
+  <div class="feedback-container container" id="feedback">
+    <div class="feedback-section">
+      <div class="swiper-container">
+        <div class="swiper-wrapper" id="feedback-wrapper">
+          <div class="loader-wrapper">
+            <span class="loader"></span>
+          </div>
         </div>
       </div>
+      <div class="swiper-buttons">
+        <button id="prevBtn" aria-label="Previouse feedback">
+          <svg class="icon-f icon-arrow-left" width="14" height="14">
+            <use href="./public/img/sprite.svg#icon-arrow-left"></use>
+          </svg>
+        </button>
+        <button id="nextBtn" aria-label="Next feedback">
+          <svg class="icon-f icon-arrow-right" width="14" height="14">
+            <use href="./public/img/sprite.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="pagination" id="pagination"></div>
     </div>
-    <div class="swiper-buttons">
-      <button id="prevBtn" aria-label="Previouse feedback">
-        <svg class="icon-f icon-arrow-left" width="14" height="14">
-          <use href="./public/img/sprite.svg#icon-arrow-left"></use>
-        </svg>
-      </button>
-      <button id="nextBtn" aria-label="Next feedback">
-        <svg class="icon-f icon-arrow-right" width="14" height="14">
-          <use href="./public/img/sprite.svg#icon-arrow-right"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="pagination" id="pagination"></div>
   </div>
-</div>
+</section>
