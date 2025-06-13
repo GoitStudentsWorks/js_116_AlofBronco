@@ -21,7 +21,7 @@ async function fetchFeedbacks() {
       }
     );
     let feedbacks = response.data.data;
-    console.log(feedbacks); // srawdzian
+    console.log(feedbacks);
 
     if (!feedbacks || feedbacks.length === 0) {
       ('No feedback find');
