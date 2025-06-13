@@ -82,7 +82,14 @@
   font-size: 18px;
   line-height: 1.5;
   padding: 0;
+  transition: background 0.2s ease-in-out;
 }
+
+.explore-btn:hover,
+.explore-btn:focus {
+  background: rgba(118, 65, 145, 0.6);
+}
+
 
 .bg-image {
   background-color: #23132b;
@@ -92,12 +99,12 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-image: url('../img/hero/bg-image-mobile.webp');
+  background-image: url('/img/hero/bg-image-mobile.webp');
 }
 
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .bg-image {
-    background-image: url('../img/hero/bg-image-mobile@2x.webp');
+    background-image: url('/img/hero/bg-image-mobile@2x.webp');
   }
 }
 
@@ -144,15 +151,17 @@
   .bg-image {
     width: 704px;
     height: 632px;
-    background: url('../img/hero/bg-image-tablet.webp') no-repeat center center;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
+    background-image: url('/img/hero/bg-image-tablet.webp');
   }
 }
 
 @media only screen and (min-width: 321px) and (max-width: 768px) and (min-resolution: 192dpi),
   only screen and (min-width: 321px) and (max-width: 768px) and (min-device-pixel-ratio: 2) {
   .bg-image {
-    background-image: url('../img/hero/bg-image-tablet@2x.webp');
+    background-image: url('/img/hero/bg-image-tablet@2x.webp');
   }
 }
 
@@ -187,13 +196,14 @@
     height: 960px;
     width: 641px;
     margin: 0;
-    background-image: url('../img/hero/bg-image-desktop.webp');
+    background-image: url('/img/hero/bg-image-desktop.webp');
+
   }
 }
 
 @media (min-width: 1440px) and (min-resolution: 192dpi),
   (min-width: 1440px) and (min-device-pixel-ratio: 2) {
   .bg-image {
-    background-image: url('../img/hero/bg-image-desktop@2x.webp');
+    background-image: url('/img/hero/bg-image-desktop@2x.webp');
   }
 }

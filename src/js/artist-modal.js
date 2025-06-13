@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const descContainer = document.querySelector('.description-wrapper');
 const modalTitle = document.querySelector('.modal-title');
+const modal = document.querySelector('.modal');
 const albumsList = document.querySelector('.albums-list');
 const loader = document.querySelector('.loader');
 const artistsGallery = document.querySelector('.artists-gallery');
@@ -32,6 +33,7 @@ async function loadArtist(artistId) {
   albumsList.innerHTML = '';
   modalTitle.innerHTML = '';
   albumsTitle.innerHTML = '';
+  modal.style.display = 'none';
   showLoader();
   try {
     const data = await getArtistData(artistId);
@@ -44,6 +46,7 @@ async function loadArtist(artistId) {
 
     insertAlbums(data);
     renderArtistDescription(data);
+    modal.style.display = 'block';
   } catch (error) {
     console.error('Error loading artist data:', error);
   } finally {
@@ -69,7 +72,7 @@ function trackTemplate({ strTrack, intDuration, movie }) {
                     ? `<a class="track-link" href='${movie}' target="_blank" rel="noopener noreferrer"
                   ><svg class="track-link-icon" width="24" height="24">
                     <use
-                      href="/img/artist-modal/artist-modal.svg#icon-youtube"
+                      href="./img/sprite.svg#icon-youtube"
                     ></use></svg
                 ></a>`
                     : ''
@@ -195,14 +198,15 @@ function renderArtistDescription(data) {
 }
 
 artistsGallery.addEventListener('click', e => {
-  if (e.target.nodeName !== 'BUTTON') return;
+  const button = e.target.closest('button');
+  if (!button) return;
 
   backdrop.classList.add('is-open');
   document.body.style.overflowY = 'hidden';
 
-  genresList = e.target.dataset.genres.split(',');
+  genresList = button.dataset.genres.split(',');
 
-  loadArtist(e.target.dataset.id);
+  loadArtist(button.dataset.id);
 });
 
 function closeModal() {
