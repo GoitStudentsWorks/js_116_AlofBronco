@@ -195,14 +195,15 @@ function renderArtistDescription(data) {
 }
 
 artistsGallery.addEventListener('click', e => {
-  if (e.target.nodeName !== 'BUTTON') return;
+  const button = e.target.closest('button');
+  if (!button) return;
 
   backdrop.classList.add('is-open');
   document.body.style.overflowY = 'hidden';
 
-  genresList = e.target.dataset.genres.split(',');
+  genresList = button.dataset.genres.split(',');
 
-  loadArtist(e.target.dataset.id);
+  loadArtist(button.dataset.id);
 });
 
 function closeModal() {
