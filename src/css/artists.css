@@ -165,15 +165,11 @@
   border: 5px solid #646464;
   border-bottom-color: #fff;
   border-radius: 50%;
-  display: inline-block;
+  display: block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 
-  position: absolute;
-  margin-top: 64px;
-
-  left: 50%;
-  transform: translate(0%, -50%);
-
-  z-index: 9999;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
 }
