@@ -6,7 +6,10 @@
   padding-bottom: 48px;
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 24px;
+  /* margin-bottom: 24px; */
+}
+.footer-thumb {
+  padding-top: 24px;
 }
 @media screen and (min-width: 768px) {
   .footer.section {
@@ -14,7 +17,10 @@
   }
   .footer-wrapper {
     padding-bottom: 80px;
-    margin-bottom: 32px;
+    /* margin-bottom: 32px; */
+  }
+  .footer-thumb {
+    padding-top: 32px;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 376px) {
