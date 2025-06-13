@@ -43,7 +43,7 @@
   justify-content: center;
   align-items: center;
 
-  transition: background-color 0.1s ease-in-out, fill 0.1s ease-in-out;
+  transition: background-color 0.2s ease-in-out, fill 0.2s ease-in-out;
 }
 
 .modal-close-button:hover,
@@ -198,7 +198,7 @@
   align-items: center;
 
   fill: #fff;
-  transition: fill 0.1s ease-in-out;
+  transition: fill 0.2s ease-in-out;
 }
 
 .track-link-space:hover,
