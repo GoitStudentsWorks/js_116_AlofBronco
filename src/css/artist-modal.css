@@ -6,7 +6,6 @@
   height: 100%;
   background-color: rgba(156, 156, 156, 0.25);
   padding: 64px 16px;
-  overflow-y: scroll;
   z-index: 9999;
 
   opacity: 0;
@@ -26,6 +25,8 @@
   background-color: #060307;
   border-radius: 16px;
   padding: 52px 8px;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .modal-close-button {
@@ -227,7 +228,6 @@
 
 .modal {
   max-width: 375px;
-  min-height: 800px;
 }
 
 .loader {
@@ -253,6 +253,33 @@
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+
+.modal::-webkit-scrollbar,
+.artist-biography .artist-desc-text::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal::-webkit-scrollbar-track,
+.artist-biography .artist-desc-text::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.modal::-webkit-scrollbar-thumb,
+.artist-biography .artist-desc-text::-webkit-scrollbar-thumb {
+  background-color: #646464;
+  border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover,
+.artist-biography .artist-desc-text::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.modal,
+.artist-biography .artist-desc-text {
+  scrollbar-width: thin;
+  scrollbar-color: #646464 rgba(255, 255, 255, 0.05);
 }
 
 @media screen and (min-width: 768px) {
@@ -356,7 +383,7 @@
     max-width: 1440px;
   }
 
-  .artist-desc-text {
+  .artist-biography .artist-desc-text {
     max-height: 235px;
     overflow-y: scroll;
   }

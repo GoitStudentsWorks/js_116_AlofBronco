@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const descContainer = document.querySelector('.description-wrapper');
 const modalTitle = document.querySelector('.modal-title');
+const modal = document.querySelector('.modal');
 const albumsList = document.querySelector('.albums-list');
 const loader = document.querySelector('.loader');
 const artistsGallery = document.querySelector('.artists-gallery');
@@ -32,6 +33,7 @@ async function loadArtist(artistId) {
   albumsList.innerHTML = '';
   modalTitle.innerHTML = '';
   albumsTitle.innerHTML = '';
+  modal.style.display = 'none';
   showLoader();
   try {
     const data = await getArtistData(artistId);
@@ -44,6 +46,7 @@ async function loadArtist(artistId) {
 
     insertAlbums(data);
     renderArtistDescription(data);
+    modal.style.display = 'block';
   } catch (error) {
     console.error('Error loading artist data:', error);
   } finally {
