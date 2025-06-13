@@ -6,4 +6,4 @@
 ## Feedback Modal - Vadim Prof
 ## About - Matvey Yurga
 ## Feedback - Viktor Ignatiev
-## Footer - Ihor Shcherbak
+## Footer - Ivan Kasich

@@ -1,0 +1,211 @@
+.hero {
+  position: relative;
+  background-color: #23132b;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(6, 3, 7, 1), rgba(35, 19, 43, 0));
+  pointer-events: none;
+  z-index: 10;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 106px;
+  background: linear-gradient(0deg, rgba(6, 3, 7, 1), rgba(35, 19, 43, 0));
+  pointer-events: none;
+  z-index: 10;
+}
+
+.hero-container {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.promo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+.hero-header {
+  font-family: 'Epilogue', sans-serif;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.discover {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+.explore-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 12px;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 24px;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #764191;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 64px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  transition: background 0.2s ease-in-out;
+}
+
+.explore-btn:hover,
+.explore-btn:focus {
+  background: rgba(118, 65, 145, 0.6);
+}
+
+.bg-image {
+  margin: 0 auto;
+  background-color: #23132b;
+  width: 280px;
+  height: 385px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url('/img/hero/bg-image-mobile.webp');
+}
+
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .bg-image {
+    background-image: url('/img/hero/bg-image-mobile@2x.webp');
+  }
+}
+
+/*---------TABLET---------*/
+@media only screen and (min-width: 768px) {
+  .hero::after {
+    height: 137px;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+    width: 704px;
+    height: 963px;
+  }
+
+  .promo {
+    width: 100%;
+    align-self: center;
+  }
+
+  .hero-header {
+    font-size: 48px;
+    margin-bottom: 24px;
+    width: 600px;
+  }
+
+  .discover {
+    font-size: 20px;
+    margin-bottom: 32px;
+    width: 624px;
+  }
+
+  .explore-btn {
+    width: 246px;
+    height: 47px;
+    margin-bottom: 32px;
+    align-self: flex-start;
+  }
+
+  .bg-image {
+    width: 704px;
+    height: 632px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url('/img/hero/bg-image-tablet.webp');
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 768px) and (min-resolution: 192dpi),
+  only screen and (min-width: 321px) and (max-width: 768px) and (min-device-pixel-ratio: 2) {
+  .bg-image {
+    background-image: url('/img/hero/bg-image-tablet@2x.webp');
+  }
+}
+
+/*---------DESKTOP---------*/
+@media only screen and (min-width: 1440px) {
+  .hero {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+  }
+
+  .promo {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+    margin-right: 32px;
+    width: 672px;
+  }
+
+  .hero-header {
+    font-size: 84px;
+  }
+
+  .explore-btn {
+    width: 206px;
+  }
+
+  .bg-image {
+    height: 960px;
+    width: 641px;
+    background-image: url('/img/hero/bg-image-desktop.webp');
+  }
+
+  .hero::after {
+    height: 137px;
+  }
+}
+
+@media (min-width: 1440px) and (min-resolution: 192dpi),
+  (min-width: 1440px) and (min-device-pixel-ratio: 2) {
+  .bg-image {
+    background-image: url('/img/hero/bg-image-desktop@2x.webp');
+  }
+}
