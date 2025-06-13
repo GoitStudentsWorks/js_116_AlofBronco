@@ -3,6 +3,9 @@
 * БАЗОВІ СТИЛІ (Mobile First - від 320px)
 * ----------------------------------------------------
 */
+.icon-f {
+  fill: #fff;
+}
 
 .text {
   font-family: 'Epilogue', sans-serif;
