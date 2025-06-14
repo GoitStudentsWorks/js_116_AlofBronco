@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/js_116_AlofBronco/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArtistsHub</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/js_116_AlofBronco/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/js_116_AlofBronco/assets/vendor-B6rRA8qT.js">
+    <link rel="stylesheet" crossorigin href="/js_116_AlofBronco/assets/vendor-BrJZ43sC.css">
+    <link rel="stylesheet" crossorigin href="/js_116_AlofBronco/assets/index-DrXcwvXb.css">
+  </head>
+  <body>
+    <header class="header">
+  <div class="container header-container">
+    <a href="./index.html" class="header-logo-link">
+      <svg class="header-logo" width="119" height="51">
+        <use href="./img/sprite.svg#icon-logo"></use>
+      </svg>
+    </a>
+
+    <nav class="header-nav">
+      <ul class="header-list">
+        <li class="header-list-item">
+          <a href="#artists">Artists</a>
+        </li>
+        <li class="header-list-item">
+          <a href="#about-us">About Us</a>
+        </li>
+        <li class="header-list-item">
+          <a href="#feedback">Reviews</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button class="burger-btn js-toggle-menu" type="button">
+      <svg class="header-burger menu-icon-open" width="24" height="24">
+        <use
+          class="menu-icon"
+          href="./img/sprite.svg#icon-header-open-menu"
+        ></use>
+      </svg>
+      <svg class="header-burger menu-icon-close" width="24" height="24">
+        <use href="./img/sprite.svg#icon-header-close-menu"></use>
+      </svg>
+    </button>
+  </div>
+
+  <div class="backdrop-header" id="header-mobile-menu">
+    <div class="container header-mobile-menu-container">
+      <nav class="header-menu-nav">
+        <ul class="header-menu-nav-list">
+          <li class="header-menu-nav-item">
+            <a href="#artists">Artists</a>
+          </li>
+          <li class="header-menu-nav-item">
+            <a href="#about-us">About Us</a>
+          </li>
+          <li class="header-menu-nav-item">
+            <a href="#feedback">Reviews</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+    <main>
+      <section class="hero section">
+  <div class="container hero-container">
+    <div class="promo">
+      <h1 class="hero-header">Discover Your Next Favorite Artist Today</h1>
+      <p class="discover">
+        Dive into a world of music discoveries with ArtistsHub - your personal
+        guide to the boundless universe of sound. Explore, filter, and learn
+        about your favorite artists all in one place.
+      </p>
+      <button class="explore-btn" type="button" id="btn">
+        Explore Artists<svg class="arrow" width="15" height="21">
+          <use href="./img/sprite.svg#icon-arrow"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="bg-image"></div>
+  </div>
+</section>
+
+      <section class="section artists" id="artists">
+  <div class="container">
+    <h2 class="artists-title">Artists</h2>
+    <p class="artists-header">Explore Your New Favorite Artists</p>
+    <ul class="artists-gallery"></ul>
+    <span class="loader-artists visually-hidden"></span>
+    <button class="load-more-btn visually-hidden" type="button">
+      Load More
+      <svg class="load-more-svg" width="24" height="24">
+        <use href="/js_116_AlofBronco/img/sprite.svg#icon-down-arrow"></use>
+      </svg>
+    </button>
+  </div>
+</section>
+
+      <section class="section" id="about-us">
+  <div class="containerArtist container">
+    <div>
+      <picture>
+        <source
+          media="(min-width: 1440px)"
+          srcset="/js_116_AlofBronco/assets/team_desk__1x-Bjcu4s_m.webp 1x, /js_116_AlofBronco/assets/team_desk__2x-BEwLb1yV.webp 2x"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="/js_116_AlofBronco/assets/teamtab__1x-B32T1Xqq.webp 1x, /js_116_AlofBronco/assets/teamtab__2x-B_k_ktaH.webp 2x"
+        />
+        <source
+          media="(max-width: 767px)"
+          srcset="data:image/webp;base64,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 1x, /js_116_AlofBronco/assets/Placeholder-Imagemob__2x-UJXjde9p.webp 2x"
+        />
+        <img
+          class="team-Img"
+          src="/img/about-us/Placeholder-Imagemob__1x"
+          alt="Group photo of ArtistsHub team"
+        />
+      </picture>
+    </div>
+    <div class="contentArtist">
+      <svg width="64px" height="64px" class="icon">
+        <use href="./img/sprite.svg#icon-logo-icon"></use>
+      </svg>
+      <h2 class="aboutArtist">About ArtistsHub</h2>
+      <p class="artistsP">
+        At ArtistsHub, our mission is to connect music lovers with the artists
+        they adore. We strive to create a vibrant community where discovering
+        new music is as enjoyable as listening to it.
+      </p>
+    </div>
+  </div>
+</section>
+
+      <section class="section">
+  <div class="feedback-container container" id="feedback">
+    <div class="feedback-section">
+      <div class="swiper-container">
+        <div class="swiper-wrapper" id="feedback-wrapper">
+          <div class="loader-wrapper">
+            <span class="loader"></span>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-buttons">
+        <button id="prevBtn" aria-label="Previouse feedback">
+          <svg class="icon-f icon-arrow-left" width="14" height="14">
+            <use href="/js_116_AlofBronco/assets/sprite-BuYHlP-P.svg#icon-arrow-left"></use>
+          </svg>
+        </button>
+        <button id="nextBtn" aria-label="Next feedback">
+          <svg class="icon-f icon-arrow-right" width="14" height="14">
+            <use href="/js_116_AlofBronco/assets/sprite-BuYHlP-P.svg#icon-arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="footer section">
+  <div class="container">
+    <div class="footer-wrapper">
+      <nav class="footer-nav">
+        <a class="footer-nav-logo" href="./index.html"
+          ><svg class="footer-logo-icon" width="116" height="36">
+            <use href="/js_116_AlofBronco/img/sprite.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <ul class="footer-list">
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#artists">Artists</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#about-us">About us</a>
+          </li>
+          <li class="footer-nav-item">
+            <a class="footer-nav-link" href="#feedback">Reviews</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-thumb">
+      <ul class="footer-socials-list">
+        <li class="footer-socials-item">
+          <a
+            class="footer-socials-link"
+            href="https://instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><svg class="footer-social-svg" width="40" height="40">
+              <use href="/js_116_AlofBronco/img/sprite.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer-socials-item">
+          <a
+            class="footer-socials-link"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><svg class="footer-social-svg" width="40" height="40">
+              <use href="/js_116_AlofBronco/img/sprite.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer-socials-item">
+          <a
+            class="footer-socials-link"
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><svg class="footer-social-svg" width="40" height="40">
+              <use href="/js_116_AlofBronco/img/sprite.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <p class="footer-copyrights">
+        &copy; 2025 ArtistsHub. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+    <div class="backdrop">
+  <div class="modal">
+    <button class="modal-close-button" type="button">
+      <svg class="modal-close-icon" width="14" height="14">
+        <use href="./img/sprite.svg#icon-close-modal"></use>
+      </svg>
+    </button>
+    <h3 class="modal-title">Artist Name</h3>
+    <div class="modal-content">
+      <div class="description-wrapper"></div>
+      <h4 class="albums-title">Albums</h4>
+      <ul class="albums-list"></ul>
+    </div>
+  </div>
+  <span class="loader visually-hidden"></span>
+</div>
+
+    
+
+  </body>
+</html>
